@@ -26,4 +26,20 @@ public class ThemePark {
         int visitCount = attraction.getVisitCount() + 1;
         attraction.setVisitCount(visitCount);
     }
+
+    public void addEntertainment(IReviewed entertainment){
+        this.entertainments.add(entertainment);
+    }
+
+    public int getEntertainmentCount(){
+       return this.entertainments.size();
+    }
+
+    public int getTotalReviews(){
+        int ratingTotal=0;
+        for(IReviewed entertainment: this.entertainments){
+            ratingTotal += entertainment.getRating();
+        }
+        return ratingTotal;
+    }
 }
